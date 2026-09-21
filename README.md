@@ -5,6 +5,8 @@
 ## 章节目录
 
 - [第二章：从最小 Deep Agent 到工具调用与 LangSmith 追踪](notes/ch02-quickstart.md)
+- [第三章：虚拟文件系统——实验记录、Backend 对比与可复现代码](notes/ch03-virtual-filesystem.md)
+  - [PyCharm 真实模型示例与离线验证](examples/ch03-virtual-filesystem/README.md)
 
 ## 记录原则
 

@@ -1,0 +1,1538 @@
+{
+  "python": "3.12.13",
+  "packages": {
+    "deepagents": "0.7.13",
+    "langchain": "1.4.2",
+    "langchain-core": "1.6.3",
+    "langgraph": "1.2.11"
+  },
+  "passed": 85,
+  "total": 85,
+  "checks": [
+    {
+      "group": "tools",
+      "name": "State: write_file",
+      "passed": true,
+      "observed": "Updated file /notes/demo.md"
+    },
+    {
+      "group": "tools",
+      "name": "State: read_file 读回原文",
+      "passed": true,
+      "observed": "1  第1行：学习 Backend\n2  第2行：TODO 阅读\n3  第3行：TODO 实验\n4  第4行：完成"
+    },
+    {
+      "group": "tools",
+      "name": "State: offset=1 从第2行读两行",
+      "passed": true,
+      "observed": "2  第2行：TODO 阅读\n3  第3行：TODO 实验\n\n[Read 2 lines (lines 2-3 of 4 total). 1 line remaining from offset 3.]"
+    },
+    {
+      "group": "tools",
+      "name": "State: ls",
+      "passed": true,
+      "observed": "['/notes/demo.md']"
+    },
+    {
+      "group": "tools",
+      "name": "State: glob",
+      "passed": true,
+      "observed": "['/notes/demo.md']"
+    },
+    {
+      "group": "tools",
+      "name": "State: grep/files_with_matches",
+      "passed": true,
+      "observed": "/notes/demo.md"
+    },
+    {
+      "group": "tools",
+      "name": "State: grep/content",
+      "passed": true,
+      "observed": "/notes/demo.md:\n  2: 第2行：TODO 阅读\n  3: 第3行：TODO 实验"
+    },
+    {
+      "group": "tools",
+      "name": "State: grep/count",
+      "passed": true,
+      "observed": "/notes/demo.md: 2"
+    },
+    {
+      "group": "tools",
+      "name": "State: edit_file",
+      "passed": true,
+      "observed": "Successfully replaced 1 instance(s) of the string in '/notes/demo.md'"
+    },
+    {
+      "group": "tools",
+      "name": "State: 编辑确实改变内容",
+      "passed": true,
+      "observed": "1  第1行：学习 Backend\n2  第2行：DONE 阅读\n3  第3行：TODO 实验\n4  第4行：完成"
+    },
+    {
+      "group": "tools",
+      "name": "State: 不存在的替换目标被拒绝且原文不变",
+      "passed": true,
+      "observed": "Error: String not found in file: 'NOT_PRESENT'"
+    },
+    {
+      "group": "tools",
+      "name": "State: v0.7 write_file 是覆盖而非追加",
+      "passed": true,
+      "observed": "1  完整覆盖后的新内容"
+    },
+    {
+      "group": "tools",
+      "name": "State: delete 后读不到测试文件",
+      "passed": true,
+      "observed": "Error: File '/notes/disposable.txt' not found"
+    },
+    {
+      "group": "tools",
+      "name": "State: 文件确实存在 Agent State.files",
+      "passed": true,
+      "observed": "{'/notes/demo.md': {'content': '完整覆盖后的新内容', 'encoding': 'utf-8', 'created_at': '2026-09-21T01:09:51.953812+00:00', 'modified_at': '2026-09-21T01:09:52.147292+00:00'}}"
+    },
+    {
+      "group": "tools",
+      "name": "Filesystem: write_file",
+      "passed": true,
+      "observed": "Updated file /notes/demo.md"
+    },
+    {
+      "group": "tools",
+      "name": "Filesystem: read_file 读回原文",
+      "passed": true,
+      "observed": "1  第1行：学习 Backend\n2  第2行：TODO 阅读\n3  第3行：TODO 实验\n4  第4行：完成"
+    },
+    {
+      "group": "tools",
+      "name": "Filesystem: offset=1 从第2行读两行",
+      "passed": true,
+      "observed": "2  第2行：TODO 阅读\n3  第3行：TODO 实验\n\n[Read 2 lines (lines 2-3 of 4 total). 1 line remaining from offset 3.]"
+    },
+    {
+      "group": "tools",
+      "name": "Filesystem: ls",
+      "passed": true,
+      "observed": "['/notes/demo.md']"
+    },
+    {
+      "group": "tools",
+      "name": "Filesystem: glob",
+      "passed": true,
+      "observed": "['/notes/demo.md']"
+    },
+    {
+      "group": "tools",
+      "name": "Filesystem: grep/files_with_matches",
+      "passed": true,
+      "observed": "/notes/demo.md"
+    },
+    {
+      "group": "tools",
+      "name": "Filesystem: grep/content",
+      "passed": true,
+      "observed": "/notes/demo.md:\n  2: 第2行：TODO 阅读\n  3: 第3行：TODO 实验"
+    },
+    {
+      "group": "tools",
+      "name": "Filesystem: grep/count",
+      "passed": true,
+      "observed": "/notes/demo.md: 2"
+    },
+    {
+      "group": "tools",
+      "name": "Filesystem: edit_file",
+      "passed": true,
+      "observed": "Successfully replaced 1 instance(s) of the string in '/notes/demo.md'"
+    },
+    {
+      "group": "tools",
+      "name": "Filesystem: 编辑确实改变内容",
+      "passed": true,
+      "observed": "1  第1行：学习 Backend\n2  第2行：DONE 阅读\n3  第3行：TODO 实验\n4  第4行：完成"
+    },
+    {
+      "group": "tools",
+      "name": "Filesystem: 不存在的替换目标被拒绝且原文不变",
+      "passed": true,
+      "observed": "Error: String not found in file: 'NOT_PRESENT'"
+    },
+    {
+      "group": "tools",
+      "name": "Filesystem: v0.7 write_file 是覆盖而非追加",
+      "passed": true,
+      "observed": "1  完整覆盖后的新内容"
+    },
+    {
+      "group": "tools",
+      "name": "Filesystem: delete 后读不到测试文件",
+      "passed": true,
+      "observed": "Error: File '/notes/disposable.txt' not found"
+    },
+    {
+      "group": "tools",
+      "name": "Filesystem: 实际文件落在指定磁盘目录",
+      "passed": true,
+      "observed": "<LAB_ROOT>\\runs\\20260921-090951-7e16cd0d\\tool-filesystem\\notes\\demo.md"
+    },
+    {
+      "group": "tools",
+      "name": "Store: write_file",
+      "passed": true,
+      "observed": "Updated file /notes/demo.md"
+    },
+    {
+      "group": "tools",
+      "name": "Store: read_file 读回原文",
+      "passed": true,
+      "observed": "1  第1行：学习 Backend\n2  第2行：TODO 阅读\n3  第3行：TODO 实验\n4  第4行：完成"
+    },
+    {
+      "group": "tools",
+      "name": "Store: offset=1 从第2行读两行",
+      "passed": true,
+      "observed": "2  第2行：TODO 阅读\n3  第3行：TODO 实验\n\n[Read 2 lines (lines 2-3 of 4 total). 1 line remaining from offset 3.]"
+    },
+    {
+      "group": "tools",
+      "name": "Store: ls",
+      "passed": true,
+      "observed": "['/notes/demo.md']"
+    },
+    {
+      "group": "tools",
+      "name": "Store: glob",
+      "passed": true,
+      "observed": "['/notes/demo.md']"
+    },
+    {
+      "group": "tools",
+      "name": "Store: grep/files_with_matches",
+      "passed": true,
+      "observed": "/notes/demo.md"
+    },
+    {
+      "group": "tools",
+      "name": "Store: grep/content",
+      "passed": true,
+      "observed": "/notes/demo.md:\n  2: 第2行：TODO 阅读\n  3: 第3行：TODO 实验"
+    },
+    {
+      "group": "tools",
+      "name": "Store: grep/count",
+      "passed": true,
+      "observed": "/notes/demo.md: 2"
+    },
+    {
+      "group": "tools",
+      "name": "Store: edit_file",
+      "passed": true,
+      "observed": "Successfully replaced 1 instance(s) of the string in '/notes/demo.md'"
+    },
+    {
+      "group": "tools",
+      "name": "Store: 编辑确实改变内容",
+      "passed": true,
+      "observed": "1  第1行：学习 Backend\n2  第2行：DONE 阅读\n3  第3行：TODO 实验\n4  第4行：完成"
+    },
+    {
+      "group": "tools",
+      "name": "Store: 不存在的替换目标被拒绝且原文不变",
+      "passed": true,
+      "observed": "Error: String not found in file: 'NOT_PRESENT'"
+    },
+    {
+      "group": "tools",
+      "name": "Store: v0.7 write_file 是覆盖而非追加",
+      "passed": true,
+      "observed": "1  完整覆盖后的新内容"
+    },
+    {
+      "group": "tools",
+      "name": "Store: delete 后读不到测试文件",
+      "passed": true,
+      "observed": "Error: File '/notes/disposable.txt' not found"
+    },
+    {
+      "group": "tools",
+      "name": "Store: 文件确实写入 Store namespace",
+      "passed": true,
+      "observed": "['/notes/demo.md']"
+    },
+    {
+      "group": "lifecycle",
+      "name": "State: 同线程下一轮可读",
+      "passed": true,
+      "observed": "1  STATE_MARKER"
+    },
+    {
+      "group": "lifecycle",
+      "name": "State: 新线程看不到 A 的文件",
+      "passed": true,
+      "observed": "Error: File '/memo.txt' not found"
+    },
+    {
+      "group": "lifecycle",
+      "name": "State: 新 Agent + 同一 Checkpointer + 原 thread 可恢复",
+      "passed": true,
+      "observed": "1  STATE_MARKER"
+    },
+    {
+      "group": "lifecycle",
+      "name": "State: 相同 thread_id + 新内存 Checkpointer 不能恢复",
+      "passed": true,
+      "observed": "Error: File '/memo.txt' not found"
+    },
+    {
+      "group": "lifecycle",
+      "name": "Filesystem: 共享 root_dir 的新线程可读",
+      "passed": true,
+      "observed": "1  DISK_MARKER"
+    },
+    {
+      "group": "lifecycle",
+      "name": "Filesystem: 新 Agent 指向原磁盘目录仍可读",
+      "passed": true,
+      "observed": "1  DISK_MARKER"
+    },
+    {
+      "group": "lifecycle",
+      "name": "Store: 同一 Store/namespace 可跨线程",
+      "passed": true,
+      "observed": "1  STORE_MARKER"
+    },
+    {
+      "group": "lifecycle",
+      "name": "Store: 不同 namespace 隔离",
+      "passed": true,
+      "observed": "Error: File '/memo.txt' not found"
+    },
+    {
+      "group": "lifecycle",
+      "name": "Store: 新 Agent 复用相同 Store/namespace 可读",
+      "passed": true,
+      "observed": "1  STORE_MARKER"
+    },
+    {
+      "group": "lifecycle",
+      "name": "Store: 新 InMemoryStore 不含旧数据",
+      "passed": true,
+      "observed": "Error: File '/memo.txt' not found"
+    },
+    {
+      "group": "lifecycle",
+      "name": "独立进程探针正常完成",
+      "passed": true,
+      "observed": "{\"disk_found\": true, \"state_found\": false, \"store_found\": false}\n"
+    },
+    {
+      "group": "lifecycle",
+      "name": "真正的新进程: 磁盘保留、内存 State/Store 不保留",
+      "passed": true,
+      "observed": "{'disk_found': True, 'state_found': False, 'store_found': False}"
+    },
+    {
+      "group": "composite",
+      "name": "Composite: 只有默认路由文件进入 State.files",
+      "passed": true,
+      "observed": "{'/scratch/plan.md': {'content': 'TEMP_MARKER', 'encoding': 'utf-8', 'created_at': '2026-09-21T01:09:57.066272+00:00', 'modified_at': '2026-09-21T01:09:57.066272+00:00'}}"
+    },
+    {
+      "group": "composite",
+      "name": "Composite: /project/ 前缀剥离后映射磁盘",
+      "passed": true,
+      "observed": "<LAB_ROOT>\\runs\\20260921-090951-7e16cd0d\\composite-project"
+    },
+    {
+      "group": "composite",
+      "name": "Composite: /memories/ 进入 Store",
+      "passed": true,
+      "observed": "['/preferences.md']"
+    },
+    {
+      "group": "composite",
+      "name": "Composite: 新线程读取 /scratch/plan.md，预期不可见",
+      "passed": true,
+      "observed": "Error: File '/scratch/plan.md' not found"
+    },
+    {
+      "group": "composite",
+      "name": "Composite: 新线程读取 /memories/preferences.md，预期可见",
+      "passed": true,
+      "observed": "1  MEMORY_MARKER"
+    },
+    {
+      "group": "composite",
+      "name": "Composite: 新线程读取 /project/report.md，预期可见",
+      "passed": true,
+      "observed": "1  PROJECT_MARKER"
+    },
+    {
+      "group": "composite",
+      "name": "Composite: glob 聚合并保留外部路径",
+      "passed": true,
+      "observed": "['/memories/preferences.md', '/project/report.md', '/scratch/plan.md']"
+    },
+    {
+      "group": "composite",
+      "name": "Composite: grep 跨路由聚合",
+      "passed": true,
+      "observed": "/memories/preferences.md\n/project/report.md\n/scratch/plan.md"
+    },
+    {
+      "group": "composite",
+      "name": "Composite: 拼错 /memories/ 会进入 default，不自动成为长期记忆",
+      "passed": true,
+      "observed": "Error: File '/memory/typo.md' not found"
+    },
+    {
+      "group": "permissions",
+      "name": "Permission: 可读制度",
+      "passed": true,
+      "observed": "1  ORIGINAL_POLICY"
+    },
+    {
+      "group": "permissions",
+      "name": "Permission: 拒绝 write_file 且磁盘原文不变",
+      "passed": true,
+      "observed": "Error: permission denied for write on /policies/rule.md"
+    },
+    {
+      "group": "permissions",
+      "name": "Permission: 拒绝 edit_file 且磁盘原文不变",
+      "passed": true,
+      "observed": "Error: permission denied for write on /policies/rule.md"
+    },
+    {
+      "group": "permissions",
+      "name": "Permission: 拒绝 delete 且磁盘原文不变",
+      "passed": true,
+      "observed": "Error: permission denied for write on /policies/rule.md (matches deny rule(s): /policies/**)"
+    },
+    {
+      "group": "permissions",
+      "name": "Permission: 拒绝读取假秘密",
+      "passed": true,
+      "observed": "Error: permission denied for read on /secrets/fake.txt"
+    },
+    {
+      "group": "permissions",
+      "name": "Permission: 全局 grep 正常执行但不泄露被拒绝文件内容",
+      "passed": true,
+      "observed": "No matches found"
+    },
+    {
+      "group": "permissions",
+      "name": "Permission: 没命中规则默认允许",
+      "passed": true,
+      "observed": "Updated file /other/open.txt"
+    },
+    {
+      "group": "permissions",
+      "name": "反例: 宽泛 allow 放前面会覆盖后面的 deny",
+      "passed": true,
+      "observed": "Updated file /workspace/private/demo.txt"
+    },
+    {
+      "group": "permissions",
+      "name": "纠正: 具体 deny 放前面",
+      "passed": true,
+      "observed": "Error: permission denied for write on /workspace/private/demo.txt"
+    },
+    {
+      "group": "permissions",
+      "name": "Permission: 白名单末尾 deny 阻止其他路径",
+      "passed": true,
+      "observed": "Error: permission denied for write on /outside-blocked.txt"
+    },
+    {
+      "group": "permissions",
+      "name": "Filesystem virtual_mode: 拒绝 .. 路径越界",
+      "passed": true,
+      "observed": "Path traversal not allowed"
+    },
+    {
+      "group": "policy",
+      "name": "PolicyWrapper: 合规写入与编辑真正落盘",
+      "passed": true,
+      "observed": "Successfully replaced 1 instance(s) of the string in '/notes/draft.txt'"
+    },
+    {
+      "group": "policy",
+      "name": "PolicyWrapper: write_file 超限被拒绝且原文不变",
+      "passed": true,
+      "observed": "写入超过 80 字节上限"
+    },
+    {
+      "group": "policy",
+      "name": "PolicyWrapper: edit_file 超限被拒绝且原文不变",
+      "passed": true,
+      "observed": "编辑后的完整文件超过 80 字节上限"
+    },
+    {
+      "group": "policy",
+      "name": "PolicyWrapper: 保护文件免于 write_file",
+      "passed": true,
+      "observed": "受保护路径不能变更"
+    },
+    {
+      "group": "policy",
+      "name": "PolicyWrapper: 保护文件免于 edit_file",
+      "passed": true,
+      "observed": "受保护路径不能变更"
+    },
+    {
+      "group": "policy",
+      "name": "PolicyWrapper: 保护文件免于 delete",
+      "passed": true,
+      "observed": "受保护路径不能变更"
+    },
+    {
+      "group": "policy",
+      "name": "PolicyWrapper: 拒绝目录本身（不依赖末尾斜杠）",
+      "passed": true,
+      "observed": "受保护路径不能变更"
+    },
+    {
+      "group": "policy",
+      "name": "PolicyWrapper: 父目录删除策略判定为拒绝",
+      "passed": true,
+      "observed": "只调用判断函数，没有删除根目录"
+    },
+    {
+      "group": "policy",
+      "name": "PolicyWrapper: 示例保护变更但不禁止读",
+      "passed": true,
+      "observed": "1  POLICY_ORIGINAL"
+    },
+    {
+      "group": "policy",
+      "name": "PolicyWrapper: Composite 路由内用 /policies 规则即可命中",
+      "passed": true,
+      "observed": "{'operation': 'write', 'path': '/policies/rule.md', 'allowed': False, 'error': '受保护路径不能变更'}"
+    },
+    {
+      "group": "policy",
+      "name": "PolicyWrapper: 留下成功/拒绝审计且不含正文",
+      "passed": true,
+      "observed": "[{'operation': 'write', 'path': '/notes/draft.txt', 'allowed': True, 'error': None}, {'operation': 'edit', 'path': '/notes/draft.txt', 'allowed': True, 'error': None}, {'operation': 'write', 'path': '/notes/draft.txt', 'allowed': False, 'error': '写入超过 80 字节上限'}, {'operation': 'edit', 'path': '/notes/draft.txt', 'allowed': False, 'error': '编辑后的完整文件超过 80 字节上限'}, {'operation': 'write', 'path': '/policies/rule.md', 'allowed': False, 'error': '受保护路径不能变更'}, {'operation': 'edit', 'path': '/policies/rule.md', 'allowed': False, 'error': '受保护路径不能变更'}, {'operation': 'delete', 'path': '/policies/rule.md', 'allowed': False, 'error': '受保护路径不能变更'}, {'operation': 'delete', 'path': '/policies', 'allowed': False, 'error': '受保护路径不能变更'}, {'operation': 'write', 'path': '/policies/rule.md', 'allowed': False, 'error': '受保护路径不能变更'}]"
+    }
+  ],
+  "tool_traces": [
+    {
+      "label": "State",
+      "calls": [
+        {
+          "thread": "A",
+          "tool": "write_file",
+          "args": {
+            "file_path": "/notes/demo.md",
+            "content": "第1行：学习 Backend\n第2行：TODO 阅读\n第3行：TODO 实验\n第4行：完成\n"
+          },
+          "status": "success",
+          "content": "Updated file /notes/demo.md"
+        },
+        {
+          "thread": "A",
+          "tool": "read_file",
+          "args": {
+            "file_path": "/notes/demo.md"
+          },
+          "status": "success",
+          "content": "1  第1行：学习 Backend\n2  第2行：TODO 阅读\n3  第3行：TODO 实验\n4  第4行：完成"
+        },
+        {
+          "thread": "A",
+          "tool": "read_file",
+          "args": {
+            "file_path": "/notes/demo.md",
+            "offset": 1,
+            "limit": 2
+          },
+          "status": "success",
+          "content": "2  第2行：TODO 阅读\n3  第3行：TODO 实验\n\n[Read 2 lines (lines 2-3 of 4 total). 1 line remaining from offset 3.]"
+        },
+        {
+          "thread": "A",
+          "tool": "ls",
+          "args": {
+            "path": "/notes/"
+          },
+          "status": "success",
+          "content": "['/notes/demo.md']"
+        },
+        {
+          "thread": "A",
+          "tool": "glob",
+          "args": {
+            "pattern": "**/*.md",
+            "path": "/"
+          },
+          "status": "success",
+          "content": "['/notes/demo.md']"
+        },
+        {
+          "thread": "A",
+          "tool": "grep",
+          "args": {
+            "pattern": "TODO",
+            "path": "/",
+            "output_mode": "files_with_matches"
+          },
+          "status": "success",
+          "content": "/notes/demo.md"
+        },
+        {
+          "thread": "A",
+          "tool": "grep",
+          "args": {
+            "pattern": "TODO",
+            "path": "/",
+            "output_mode": "content"
+          },
+          "status": "success",
+          "content": "/notes/demo.md:\n  2: 第2行：TODO 阅读\n  3: 第3行：TODO 实验"
+        },
+        {
+          "thread": "A",
+          "tool": "grep",
+          "args": {
+            "pattern": "TODO",
+            "path": "/",
+            "output_mode": "count"
+          },
+          "status": "success",
+          "content": "/notes/demo.md: 2"
+        },
+        {
+          "thread": "A",
+          "tool": "edit_file",
+          "args": {
+            "file_path": "/notes/demo.md",
+            "old_string": "TODO 阅读",
+            "new_string": "DONE 阅读"
+          },
+          "status": "success",
+          "content": "Successfully replaced 1 instance(s) of the string in '/notes/demo.md'"
+        },
+        {
+          "thread": "A",
+          "tool": "read_file",
+          "args": {
+            "file_path": "/notes/demo.md"
+          },
+          "status": "success",
+          "content": "1  第1行：学习 Backend\n2  第2行：DONE 阅读\n3  第3行：TODO 实验\n4  第4行：完成"
+        },
+        {
+          "thread": "A",
+          "tool": "edit_file",
+          "args": {
+            "file_path": "/notes/demo.md",
+            "old_string": "NOT_PRESENT",
+            "new_string": "不能插入"
+          },
+          "status": "error",
+          "content": "Error: String not found in file: 'NOT_PRESENT'"
+        },
+        {
+          "thread": "A",
+          "tool": "read_file",
+          "args": {
+            "file_path": "/notes/demo.md"
+          },
+          "status": "success",
+          "content": "1  第1行：学习 Backend\n2  第2行：DONE 阅读\n3  第3行：TODO 实验\n4  第4行：完成"
+        },
+        {
+          "thread": "A",
+          "tool": "write_file",
+          "args": {
+            "file_path": "/notes/demo.md",
+            "content": "完整覆盖后的新内容"
+          },
+          "status": "success",
+          "content": "Updated file /notes/demo.md"
+        },
+        {
+          "thread": "A",
+          "tool": "read_file",
+          "args": {
+            "file_path": "/notes/demo.md"
+          },
+          "status": "success",
+          "content": "1  完整覆盖后的新内容"
+        },
+        {
+          "thread": "A",
+          "tool": "write_file",
+          "args": {
+            "file_path": "/notes/disposable.txt",
+            "content": "只删除本次新建的实验文件"
+          },
+          "status": "success",
+          "content": "Updated file /notes/disposable.txt"
+        },
+        {
+          "thread": "A",
+          "tool": "delete",
+          "args": {
+            "file_path": "/notes/disposable.txt"
+          },
+          "status": "success",
+          "content": "Deleted /notes/disposable.txt"
+        },
+        {
+          "thread": "A",
+          "tool": "read_file",
+          "args": {
+            "file_path": "/notes/disposable.txt"
+          },
+          "status": "error",
+          "content": "Error: File '/notes/disposable.txt' not found"
+        }
+      ]
+    },
+    {
+      "label": "Filesystem",
+      "calls": [
+        {
+          "thread": "A",
+          "tool": "write_file",
+          "args": {
+            "file_path": "/notes/demo.md",
+            "content": "第1行：学习 Backend\n第2行：TODO 阅读\n第3行：TODO 实验\n第4行：完成\n"
+          },
+          "status": "success",
+          "content": "Updated file /notes/demo.md"
+        },
+        {
+          "thread": "A",
+          "tool": "read_file",
+          "args": {
+            "file_path": "/notes/demo.md"
+          },
+          "status": "success",
+          "content": "1  第1行：学习 Backend\n2  第2行：TODO 阅读\n3  第3行：TODO 实验\n4  第4行：完成"
+        },
+        {
+          "thread": "A",
+          "tool": "read_file",
+          "args": {
+            "file_path": "/notes/demo.md",
+            "offset": 1,
+            "limit": 2
+          },
+          "status": "success",
+          "content": "2  第2行：TODO 阅读\n3  第3行：TODO 实验\n\n[Read 2 lines (lines 2-3 of 4 total). 1 line remaining from offset 3.]"
+        },
+        {
+          "thread": "A",
+          "tool": "ls",
+          "args": {
+            "path": "/notes/"
+          },
+          "status": "success",
+          "content": "['/notes/demo.md']"
+        },
+        {
+          "thread": "A",
+          "tool": "glob",
+          "args": {
+            "pattern": "**/*.md",
+            "path": "/"
+          },
+          "status": "success",
+          "content": "['/notes/demo.md']"
+        },
+        {
+          "thread": "A",
+          "tool": "grep",
+          "args": {
+            "pattern": "TODO",
+            "path": "/",
+            "output_mode": "files_with_matches"
+          },
+          "status": "success",
+          "content": "/notes/demo.md"
+        },
+        {
+          "thread": "A",
+          "tool": "grep",
+          "args": {
+            "pattern": "TODO",
+            "path": "/",
+            "output_mode": "content"
+          },
+          "status": "success",
+          "content": "/notes/demo.md:\n  2: 第2行：TODO 阅读\n  3: 第3行：TODO 实验"
+        },
+        {
+          "thread": "A",
+          "tool": "grep",
+          "args": {
+            "pattern": "TODO",
+            "path": "/",
+            "output_mode": "count"
+          },
+          "status": "success",
+          "content": "/notes/demo.md: 2"
+        },
+        {
+          "thread": "A",
+          "tool": "edit_file",
+          "args": {
+            "file_path": "/notes/demo.md",
+            "old_string": "TODO 阅读",
+            "new_string": "DONE 阅读"
+          },
+          "status": "success",
+          "content": "Successfully replaced 1 instance(s) of the string in '/notes/demo.md'"
+        },
+        {
+          "thread": "A",
+          "tool": "read_file",
+          "args": {
+            "file_path": "/notes/demo.md"
+          },
+          "status": "success",
+          "content": "1  第1行：学习 Backend\n2  第2行：DONE 阅读\n3  第3行：TODO 实验\n4  第4行：完成"
+        },
+        {
+          "thread": "A",
+          "tool": "edit_file",
+          "args": {
+            "file_path": "/notes/demo.md",
+            "old_string": "NOT_PRESENT",
+            "new_string": "不能插入"
+          },
+          "status": "error",
+          "content": "Error: String not found in file: 'NOT_PRESENT'"
+        },
+        {
+          "thread": "A",
+          "tool": "read_file",
+          "args": {
+            "file_path": "/notes/demo.md"
+          },
+          "status": "success",
+          "content": "1  第1行：学习 Backend\n2  第2行：DONE 阅读\n3  第3行：TODO 实验\n4  第4行：完成"
+        },
+        {
+          "thread": "A",
+          "tool": "write_file",
+          "args": {
+            "file_path": "/notes/demo.md",
+            "content": "完整覆盖后的新内容"
+          },
+          "status": "success",
+          "content": "Updated file /notes/demo.md"
+        },
+        {
+          "thread": "A",
+          "tool": "read_file",
+          "args": {
+            "file_path": "/notes/demo.md"
+          },
+          "status": "success",
+          "content": "1  完整覆盖后的新内容"
+        },
+        {
+          "thread": "A",
+          "tool": "write_file",
+          "args": {
+            "file_path": "/notes/disposable.txt",
+            "content": "只删除本次新建的实验文件"
+          },
+          "status": "success",
+          "content": "Updated file /notes/disposable.txt"
+        },
+        {
+          "thread": "A",
+          "tool": "delete",
+          "args": {
+            "file_path": "/notes/disposable.txt"
+          },
+          "status": "success",
+          "content": "Deleted /notes/disposable.txt"
+        },
+        {
+          "thread": "A",
+          "tool": "read_file",
+          "args": {
+            "file_path": "/notes/disposable.txt"
+          },
+          "status": "error",
+          "content": "Error: File '/notes/disposable.txt' not found"
+        }
+      ]
+    },
+    {
+      "label": "Store",
+      "calls": [
+        {
+          "thread": "A",
+          "tool": "write_file",
+          "args": {
+            "file_path": "/notes/demo.md",
+            "content": "第1行：学习 Backend\n第2行：TODO 阅读\n第3行：TODO 实验\n第4行：完成\n"
+          },
+          "status": "success",
+          "content": "Updated file /notes/demo.md"
+        },
+        {
+          "thread": "A",
+          "tool": "read_file",
+          "args": {
+            "file_path": "/notes/demo.md"
+          },
+          "status": "success",
+          "content": "1  第1行：学习 Backend\n2  第2行：TODO 阅读\n3  第3行：TODO 实验\n4  第4行：完成"
+        },
+        {
+          "thread": "A",
+          "tool": "read_file",
+          "args": {
+            "file_path": "/notes/demo.md",
+            "offset": 1,
+            "limit": 2
+          },
+          "status": "success",
+          "content": "2  第2行：TODO 阅读\n3  第3行：TODO 实验\n\n[Read 2 lines (lines 2-3 of 4 total). 1 line remaining from offset 3.]"
+        },
+        {
+          "thread": "A",
+          "tool": "ls",
+          "args": {
+            "path": "/notes/"
+          },
+          "status": "success",
+          "content": "['/notes/demo.md']"
+        },
+        {
+          "thread": "A",
+          "tool": "glob",
+          "args": {
+            "pattern": "**/*.md",
+            "path": "/"
+          },
+          "status": "success",
+          "content": "['/notes/demo.md']"
+        },
+        {
+          "thread": "A",
+          "tool": "grep",
+          "args": {
+            "pattern": "TODO",
+            "path": "/",
+            "output_mode": "files_with_matches"
+          },
+          "status": "success",
+          "content": "/notes/demo.md"
+        },
+        {
+          "thread": "A",
+          "tool": "grep",
+          "args": {
+            "pattern": "TODO",
+            "path": "/",
+            "output_mode": "content"
+          },
+          "status": "success",
+          "content": "/notes/demo.md:\n  2: 第2行：TODO 阅读\n  3: 第3行：TODO 实验"
+        },
+        {
+          "thread": "A",
+          "tool": "grep",
+          "args": {
+            "pattern": "TODO",
+            "path": "/",
+            "output_mode": "count"
+          },
+          "status": "success",
+          "content": "/notes/demo.md: 2"
+        },
+        {
+          "thread": "A",
+          "tool": "edit_file",
+          "args": {
+            "file_path": "/notes/demo.md",
+            "old_string": "TODO 阅读",
+            "new_string": "DONE 阅读"
+          },
+          "status": "success",
+          "content": "Successfully replaced 1 instance(s) of the string in '/notes/demo.md'"
+        },
+        {
+          "thread": "A",
+          "tool": "read_file",
+          "args": {
+            "file_path": "/notes/demo.md"
+          },
+          "status": "success",
+          "content": "1  第1行：学习 Backend\n2  第2行：DONE 阅读\n3  第3行：TODO 实验\n4  第4行：完成"
+        },
+        {
+          "thread": "A",
+          "tool": "edit_file",
+          "args": {
+            "file_path": "/notes/demo.md",
+            "old_string": "NOT_PRESENT",
+            "new_string": "不能插入"
+          },
+          "status": "error",
+          "content": "Error: String not found in file: 'NOT_PRESENT'"
+        },
+        {
+          "thread": "A",
+          "tool": "read_file",
+          "args": {
+            "file_path": "/notes/demo.md"
+          },
+          "status": "success",
+          "content": "1  第1行：学习 Backend\n2  第2行：DONE 阅读\n3  第3行：TODO 实验\n4  第4行：完成"
+        },
+        {
+          "thread": "A",
+          "tool": "write_file",
+          "args": {
+            "file_path": "/notes/demo.md",
+            "content": "完整覆盖后的新内容"
+          },
+          "status": "success",
+          "content": "Updated file /notes/demo.md"
+        },
+        {
+          "thread": "A",
+          "tool": "read_file",
+          "args": {
+            "file_path": "/notes/demo.md"
+          },
+          "status": "success",
+          "content": "1  完整覆盖后的新内容"
+        },
+        {
+          "thread": "A",
+          "tool": "write_file",
+          "args": {
+            "file_path": "/notes/disposable.txt",
+            "content": "只删除本次新建的实验文件"
+          },
+          "status": "success",
+          "content": "Updated file /notes/disposable.txt"
+        },
+        {
+          "thread": "A",
+          "tool": "delete",
+          "args": {
+            "file_path": "/notes/disposable.txt"
+          },
+          "status": "success",
+          "content": "Deleted /notes/disposable.txt"
+        },
+        {
+          "thread": "A",
+          "tool": "read_file",
+          "args": {
+            "file_path": "/notes/disposable.txt"
+          },
+          "status": "error",
+          "content": "Error: File '/notes/disposable.txt' not found"
+        }
+      ]
+    },
+    {
+      "label": "state-A",
+      "calls": [
+        {
+          "thread": "A",
+          "tool": "write_file",
+          "args": {
+            "file_path": "/memo.txt",
+            "content": "STATE_MARKER"
+          },
+          "status": "success",
+          "content": "Updated file /memo.txt"
+        },
+        {
+          "thread": "A",
+          "tool": "read_file",
+          "args": {
+            "file_path": "/memo.txt"
+          },
+          "status": "success",
+          "content": "1  STATE_MARKER"
+        },
+        {
+          "thread": "B",
+          "tool": "read_file",
+          "args": {
+            "file_path": "/memo.txt"
+          },
+          "status": "error",
+          "content": "Error: File '/memo.txt' not found"
+        }
+      ]
+    },
+    {
+      "label": "state-restored",
+      "calls": [
+        {
+          "thread": "A",
+          "tool": "read_file",
+          "args": {
+            "file_path": "/memo.txt"
+          },
+          "status": "success",
+          "content": "1  STATE_MARKER"
+        }
+      ]
+    },
+    {
+      "label": "state-fresh-checkpointer",
+      "calls": [
+        {
+          "thread": "A",
+          "tool": "read_file",
+          "args": {
+            "file_path": "/memo.txt"
+          },
+          "status": "error",
+          "content": "Error: File '/memo.txt' not found"
+        }
+      ]
+    },
+    {
+      "label": "filesystem-A",
+      "calls": [
+        {
+          "thread": "A",
+          "tool": "write_file",
+          "args": {
+            "file_path": "/memo.txt",
+            "content": "DISK_MARKER"
+          },
+          "status": "success",
+          "content": "Updated file /memo.txt"
+        },
+        {
+          "thread": "B",
+          "tool": "read_file",
+          "args": {
+            "file_path": "/memo.txt"
+          },
+          "status": "success",
+          "content": "1  DISK_MARKER"
+        }
+      ]
+    },
+    {
+      "label": "filesystem-new-agent",
+      "calls": [
+        {
+          "thread": "A",
+          "tool": "read_file",
+          "args": {
+            "file_path": "/memo.txt"
+          },
+          "status": "success",
+          "content": "1  DISK_MARKER"
+        }
+      ]
+    },
+    {
+      "label": "store-alice",
+      "calls": [
+        {
+          "thread": "A",
+          "tool": "write_file",
+          "args": {
+            "file_path": "/memo.txt",
+            "content": "STORE_MARKER"
+          },
+          "status": "success",
+          "content": "Updated file /memo.txt"
+        },
+        {
+          "thread": "B",
+          "tool": "read_file",
+          "args": {
+            "file_path": "/memo.txt"
+          },
+          "status": "success",
+          "content": "1  STORE_MARKER"
+        }
+      ]
+    },
+    {
+      "label": "store-bob",
+      "calls": [
+        {
+          "thread": "A",
+          "tool": "read_file",
+          "args": {
+            "file_path": "/memo.txt"
+          },
+          "status": "error",
+          "content": "Error: File '/memo.txt' not found"
+        }
+      ]
+    },
+    {
+      "label": "store-alice-new-agent",
+      "calls": [
+        {
+          "thread": "A",
+          "tool": "read_file",
+          "args": {
+            "file_path": "/memo.txt"
+          },
+          "status": "success",
+          "content": "1  STORE_MARKER"
+        }
+      ]
+    },
+    {
+      "label": "store-new-instance",
+      "calls": [
+        {
+          "thread": "A",
+          "tool": "read_file",
+          "args": {
+            "file_path": "/memo.txt"
+          },
+          "status": "error",
+          "content": "Error: File '/memo.txt' not found"
+        }
+      ]
+    },
+    {
+      "label": "composite",
+      "calls": [
+        {
+          "thread": "A",
+          "tool": "write_file",
+          "args": {
+            "file_path": "/scratch/plan.md",
+            "content": "TEMP_MARKER"
+          },
+          "status": "success",
+          "content": "Updated file /scratch/plan.md"
+        },
+        {
+          "thread": "A",
+          "tool": "write_file",
+          "args": {
+            "file_path": "/memories/preferences.md",
+            "content": "MEMORY_MARKER"
+          },
+          "status": "success",
+          "content": "Updated file /memories/preferences.md"
+        },
+        {
+          "thread": "A",
+          "tool": "write_file",
+          "args": {
+            "file_path": "/project/report.md",
+            "content": "PROJECT_MARKER"
+          },
+          "status": "success",
+          "content": "Updated file /project/report.md"
+        },
+        {
+          "thread": "B",
+          "tool": "read_file",
+          "args": {
+            "file_path": "/scratch/plan.md"
+          },
+          "status": "error",
+          "content": "Error: File '/scratch/plan.md' not found"
+        },
+        {
+          "thread": "B",
+          "tool": "read_file",
+          "args": {
+            "file_path": "/memories/preferences.md"
+          },
+          "status": "success",
+          "content": "1  MEMORY_MARKER"
+        },
+        {
+          "thread": "B",
+          "tool": "read_file",
+          "args": {
+            "file_path": "/project/report.md"
+          },
+          "status": "success",
+          "content": "1  PROJECT_MARKER"
+        },
+        {
+          "thread": "A",
+          "tool": "glob",
+          "args": {
+            "pattern": "**/*.md",
+            "path": "/"
+          },
+          "status": "success",
+          "content": "['/memories/preferences.md', '/project/report.md', '/scratch/plan.md']"
+        },
+        {
+          "thread": "A",
+          "tool": "grep",
+          "args": {
+            "pattern": "MARKER",
+            "path": "/",
+            "output_mode": "files_with_matches"
+          },
+          "status": "success",
+          "content": "/memories/preferences.md\n/project/report.md\n/scratch/plan.md"
+        },
+        {
+          "thread": "A",
+          "tool": "write_file",
+          "args": {
+            "file_path": "/memory/typo.md",
+            "content": "TYPO_MARKER"
+          },
+          "status": "success",
+          "content": "Updated file /memory/typo.md"
+        },
+        {
+          "thread": "B",
+          "tool": "read_file",
+          "args": {
+            "file_path": "/memory/typo.md"
+          },
+          "status": "error",
+          "content": "Error: File '/memory/typo.md' not found"
+        }
+      ]
+    },
+    {
+      "label": "permissions",
+      "calls": [
+        {
+          "thread": "A",
+          "tool": "read_file",
+          "args": {
+            "file_path": "/policies/rule.md"
+          },
+          "status": "success",
+          "content": "1  ORIGINAL_POLICY"
+        },
+        {
+          "thread": "A",
+          "tool": "write_file",
+          "args": {
+            "file_path": "/policies/rule.md",
+            "content": "MODIFIED"
+          },
+          "status": "error",
+          "content": "Error: permission denied for write on /policies/rule.md"
+        },
+        {
+          "thread": "A",
+          "tool": "edit_file",
+          "args": {
+            "file_path": "/policies/rule.md",
+            "old_string": "ORIGINAL_POLICY",
+            "new_string": "MODIFIED"
+          },
+          "status": "error",
+          "content": "Error: permission denied for write on /policies/rule.md"
+        },
+        {
+          "thread": "A",
+          "tool": "delete",
+          "args": {
+            "file_path": "/policies/rule.md"
+          },
+          "status": "error",
+          "content": "Error: permission denied for write on /policies/rule.md (matches deny rule(s): /policies/**)"
+        },
+        {
+          "thread": "A",
+          "tool": "read_file",
+          "args": {
+            "file_path": "/secrets/fake.txt"
+          },
+          "status": "error",
+          "content": "Error: permission denied for read on /secrets/fake.txt"
+        },
+        {
+          "thread": "A",
+          "tool": "grep",
+          "args": {
+            "pattern": "FAKE_SECRET_MARKER",
+            "path": "/",
+            "output_mode": "content"
+          },
+          "status": "success",
+          "content": "No matches found"
+        },
+        {
+          "thread": "A",
+          "tool": "write_file",
+          "args": {
+            "file_path": "/other/open.txt",
+            "content": "UNMATCHED_ALLOWED"
+          },
+          "status": "success",
+          "content": "Updated file /other/open.txt"
+        }
+      ]
+    },
+    {
+      "label": "wrong-order",
+      "calls": [
+        {
+          "thread": "A",
+          "tool": "write_file",
+          "args": {
+            "file_path": "/workspace/private/demo.txt",
+            "content": "FIRST_MATCH"
+          },
+          "status": "success",
+          "content": "Updated file /workspace/private/demo.txt"
+        }
+      ]
+    },
+    {
+      "label": "right-order",
+      "calls": [
+        {
+          "thread": "A",
+          "tool": "write_file",
+          "args": {
+            "file_path": "/workspace/private/demo.txt",
+            "content": "SHOULD_NOT_CHANGE"
+          },
+          "status": "error",
+          "content": "Error: permission denied for write on /workspace/private/demo.txt"
+        }
+      ]
+    },
+    {
+      "label": "allowlist",
+      "calls": [
+        {
+          "thread": "A",
+          "tool": "write_file",
+          "args": {
+            "file_path": "/outside-blocked.txt",
+            "content": "BLOCKED"
+          },
+          "status": "error",
+          "content": "Error: permission denied for write on /outside-blocked.txt"
+        }
+      ]
+    },
+    {
+      "label": "policy-wrapper",
+      "calls": [
+        {
+          "thread": "A",
+          "tool": "write_file",
+          "args": {
+            "file_path": "/notes/draft.txt",
+            "content": "short"
+          },
+          "status": "success",
+          "content": "Updated file /notes/draft.txt"
+        },
+        {
+          "thread": "A",
+          "tool": "edit_file",
+          "args": {
+            "file_path": "/notes/draft.txt",
+            "old_string": "short",
+            "new_string": "brief"
+          },
+          "status": "success",
+          "content": "Successfully replaced 1 instance(s) of the string in '/notes/draft.txt'"
+        },
+        {
+          "thread": "A",
+          "tool": "write_file",
+          "args": {
+            "file_path": "/notes/draft.txt",
+            "content": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+          },
+          "status": "error",
+          "content": "写入超过 80 字节上限"
+        },
+        {
+          "thread": "A",
+          "tool": "edit_file",
+          "args": {
+            "file_path": "/notes/draft.txt",
+            "old_string": "brief",
+            "new_string": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+          },
+          "status": "error",
+          "content": "编辑后的完整文件超过 80 字节上限"
+        },
+        {
+          "thread": "A",
+          "tool": "write_file",
+          "args": {
+            "file_path": "/policies/rule.md",
+            "content": "changed"
+          },
+          "status": "error",
+          "content": "受保护路径不能变更"
+        },
+        {
+          "thread": "A",
+          "tool": "edit_file",
+          "args": {
+            "file_path": "/policies/rule.md",
+            "old_string": "POLICY_ORIGINAL",
+            "new_string": "changed"
+          },
+          "status": "error",
+          "content": "受保护路径不能变更"
+        },
+        {
+          "thread": "A",
+          "tool": "delete",
+          "args": {
+            "file_path": "/policies/rule.md"
+          },
+          "status": "error",
+          "content": "受保护路径不能变更"
+        },
+        {
+          "thread": "A",
+          "tool": "read_file",
+          "args": {
+            "file_path": "/policies/rule.md"
+          },
+          "status": "success",
+          "content": "1  POLICY_ORIGINAL"
+        }
+      ]
+    },
+    {
+      "label": "policy-inside-composite",
+      "calls": [
+        {
+          "thread": "A",
+          "tool": "write_file",
+          "args": {
+            "file_path": "/project/policies/rule.md",
+            "content": "changed"
+          },
+          "status": "error",
+          "content": "受保护路径不能变更"
+        }
+      ]
+    }
+  ],
+  "evidence_type": "scripted-model-real-tools-and-backends",
+  "exported_at_utc": "2026-09-21T01:16:42.593018+00:00",
+  "source_run": "20260921-090951-7e16cd0d",
+  "redaction": "Only the local project path is replaced by <LAB_ROOT>."
+}

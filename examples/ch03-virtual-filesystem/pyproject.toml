@@ -1,0 +1,14 @@
+[project]
+name = "ch03-backend-lab"
+version = "0.1.0"
+description = "Chapter 3 tutorial and reproducible backend verification"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "deepagents==0.7.13",
+    "langchain-core>=1.6.3",
+    "langchain-openai==1.6.2",
+    "python-dotenv==1.2.3",
+]
+
+[tool.uv]
+package = false
