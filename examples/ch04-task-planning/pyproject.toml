@@ -1,0 +1,17 @@
+[project]
+name = "ch04-task-planning-homework"
+version = "0.1.0"
+description = "Chapter 4 course-style example and honest offline verification"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "deepagents==0.7.13",
+    "langchain==1.4.2",
+    "langchain-core==1.6.3",
+    "langchain-openai==1.6.2",
+    "langgraph==1.2.11",
+    "python-dotenv==1.2.3",
+    "tavily-python==0.8.1",
+]
+
+[tool.uv]
+package = false

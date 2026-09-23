@@ -7,6 +7,9 @@
 - [第二章：从最小 Deep Agent 到工具调用与 LangSmith 追踪](notes/ch02-quickstart.md)
 - [第三章：虚拟文件系统——实验记录、Backend 对比与可复现代码](notes/ch03-virtual-filesystem.md)
   - [PyCharm 真实模型示例与离线验证](examples/ch03-virtual-filesystem/README.md)
+- [第四章：任务规划与分解——研究 Agent 作业、执行记录与问题复盘](notes/ch04-task-planning.md)
+  - [课程风格单文件示例与离线验证](examples/ch04-task-planning/README.md)
+  - 状态：离线行为验证通过；真实联网研究成功记录待补充。
 
 ## 记录原则
 
