@@ -10,10 +10,10 @@
 - [第四章：任务规划与分解——研究 Agent 作业、执行记录与问题复盘](notes/ch04-task-planning.md)
   - [课程风格单文件示例与离线验证](examples/ch04-task-planning/README.md)
   - 状态：离线行为验证通过；真实联网研究成功记录待补充。
-
-- [子 Agent 与上下文隔离：角色设计、协作流程和排错](notes/ch05-subagents.md)
-- [多 Agent 销售分析示例与 PyCharm 运行方法](examples/ch05-subagents/README.md)
-- [离线验证结果](examples/ch05-subagents/reports/verification.md)（固定响应模型，真实模型运行待验证）
+- [第五章：子 Agent 与上下文隔离——角色设计、协作流程和排错](notes/ch05-subagents.md)
+  - [多 Agent 销售分析示例与 PyCharm 运行方法](examples/ch05-subagents/README.md)
+  - [离线验证结果](examples/ch05-subagents/reports/verification.md)
+  - 状态：6 项离线测试通过（固定响应模型）；真实模型运行待验证。
 
 ## 记录原则
 
