@@ -1,0 +1,59 @@
+{
+  "mode": "offline-scripted-model-real-graph",
+  "remote_model_requests": 0,
+  "scripted_model_calls": 14,
+  "parent_tool_sequence": [
+    "write_todos",
+    "task",
+    "write_todos",
+    "task",
+    "write_todos",
+    "task",
+    "write_todos"
+  ],
+  "delegations": [
+    {
+      "subagent_type": "data-collector",
+      "description": "读取完整六个月数据及单位和来源。"
+    },
+    {
+      "subagent_type": "data-analyzer",
+      "description": "{\"months\": [\"1月\", \"2月\", \"3月\", \"4月\", \"5月\", \"6月\"], \"sales\": [100, 120, 90, 150, 180, 210], \"unit\": \"万元\", \"source\": \"本脚本内置的虚构教学数据，不是真实企业数据\", \"limitations\": \"只有六个月销售额，没有成本、利润、去年同期或市场活动数据。\"}"
+    },
+    {
+      "subagent_type": "report-writer",
+      "description": "{\"statistics\": {\"count\": 6, \"total\": 850.0, \"average\": 141.67, \"max_month\": \"6月\", \"max_sales\": 210.0, \"min_month\": \"3月\", \"min_sales\": 90.0, \"first_to_last_change_pct\": 110.0, \"note\": \"首末月变化不是同比；首月为 0 时比例为 null；最高最低并列时返回首次出现月份。\"}, \"unit\": \"万元\", \"source\": \"本脚本内置的虚构教学数据，不是真实企业数据\", \"limitations\": \"只有六个月销售额，没有成本、利润、去年同期或市场活动数据。\"}"
+    }
+  ],
+  "analysis": {
+    "statistics": {
+      "count": 6,
+      "total": 850.0,
+      "average": 141.67,
+      "max_month": "6月",
+      "max_sales": 210.0,
+      "min_month": "3月",
+      "min_sales": 90.0,
+      "first_to_last_change_pct": 110.0,
+      "note": "首末月变化不是同比；首月为 0 时比例为 null；最高最低并列时返回首次出现月份。"
+    },
+    "unit": "万元",
+    "source": "本脚本内置的虚构教学数据，不是真实企业数据",
+    "limitations": "只有六个月销售额，没有成本、利润、去年同期或市场活动数据。"
+  },
+  "todos": [
+    {
+      "content": "收集数据",
+      "status": "completed"
+    },
+    {
+      "content": "分析数据",
+      "status": "completed"
+    },
+    {
+      "content": "编写报告",
+      "status": "completed"
+    }
+  ],
+  "scope": "Fixed responses exercise the actual graph and tools; no live-model capability claim."
+}
